@@ -8,7 +8,7 @@ https://www.cia.gov/report-information/
 
 <img width="1886" alt="Screenshot 2024-01-29 152757" src="https://github.com/ewdlop/Cybersecurity-CrimeNote/assets/25368970/1ee6caad-28f7-4853-8396-a97190695a64">
 
-# OpenVAS (Open Vulnerability Assessment System) or Greenbone Vulnerability Management, is an open-source framework for comprehensive network vulnerability scanning and management. It is part of the Greenbone Vulnerability Manager (GVM) framework. Below are the steps to install and use OpenVAS on an Ubuntu system:
+# OpenVAS (Open Vulnerability Assessment System), is an open-source framework for comprehensive network vulnerability scanning and management. It is part of the Greenbone Vulnerability Manager (GVM) framework. Below are the steps to install and use OpenVAS on an Ubuntu system:
 
 ### Installation
 
