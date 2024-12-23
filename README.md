@@ -175,3 +175,121 @@ event http_request(c: connection, method: string, original_URI: string, unescape
 - [Zeek User Mailing List](https://lists.zeek.org/mailman/listinfo/zeek)
 
 Zeek is a powerful tool for network security monitoring and analysis, and learning to use it can significantly enhance your ability to understand and protect your network.
+
+
+# OSSEC (Open Source Security Event Correlator) is an open-source, host-based intrusion detection system (HIDS) that performs log analysis, integrity checking, Windows registry monitoring, rootkit detection, real-time alerting, and active response.
+
+Here's a guide to installing and configuring OSSEC on a Linux system:
+
+### Installation
+
+#### Prerequisites
+
+Update your package lists and install necessary dependencies:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential gcc make unzip wget
+```
+
+#### Download and Install OSSEC
+
+1. **Download OSSEC:**
+
+    ```bash
+    wget https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz -O ossec-hids.tar.gz
+    tar -zxvf ossec-hids.tar.gz
+    cd ossec-hids-3.7.0
+    ```
+
+2. **Run the Installation Script:**
+
+    ```bash
+    sudo ./install.sh
+    ```
+
+    Follow the prompts to configure the installation. For a basic setup, you can accept the default options.
+
+### Configuration
+
+After installation, you can configure OSSEC by editing the `ossec.conf` file:
+
+```bash
+sudo nano /var/ossec/etc/ossec.conf
+```
+
+Here are some key sections you might need to configure:
+
+- **Log Analysis:**
+
+    ```xml
+    <syscheck>
+      <disabled>no</disabled>
+      <frequency>7200</frequency>
+      <directories check_all="yes">/etc,/usr/bin,/usr/sbin</directories>
+      <ignore>/etc/mtab</ignore>
+      <ignore>/etc/hosts.deny</ignore>
+      <ignore>/etc/mail/statistics</ignore>
+    </syscheck>
+    ```
+
+- **Active Response:**
+
+    ```xml
+    <active-response>
+      <disabled>no</disabled>
+      <command>host-deny</command>
+      <location>local</location>
+      <rules_id>40101,40103</rules_id>
+    </active-response>
+    ```
+
+### Starting OSSEC
+
+To start the OSSEC service, use the following command:
+
+```bash
+sudo /var/ossec/bin/ossec-control start
+```
+
+### Managing OSSEC
+
+- **Start OSSEC:**
+  
+    ```bash
+    sudo /var/ossec/bin/ossec-control start
+    ```
+
+- **Stop OSSEC:**
+
+    ```bash
+    sudo /var/ossec/bin/ossec-control stop
+    ```
+
+- **Restart OSSEC:**
+
+    ```bash
+    sudo /var/ossec/bin/ossec-control restart
+    ```
+
+- **Check Status:**
+
+    ```bash
+    sudo /var/ossec/bin/ossec-control status
+    ```
+
+### Viewing Alerts
+
+OSSEC alerts can be found in the `/var/ossec/logs/alerts/alerts.log` file. You can use `tail` to monitor this file in real-time:
+
+```bash
+sudo tail -f /var/ossec/logs/alerts/alerts.log
+```
+
+### Resources
+
+- [OSSEC Documentation](https://www.ossec.net/docs/)
+- [OSSEC GitHub Repository](https://github.com/ossec/ossec-hids)
+- [OSSEC Community](https://groups.google.com/forum/#!forum/ossec-list)
+
+By following these steps, you can install, configure, and manage OSSEC to enhance the security of your system.
