@@ -70,7 +70,7 @@ Use the default credentials (which you can change later) to log in:
 - **Username:** admin
 - **Password:** admin
 
-### Using OpenVAS(Green
+### Using OpenVAS
 
 #### Scanning for Vulnerabilities
 
