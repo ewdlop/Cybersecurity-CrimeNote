@@ -26,3 +26,7 @@ Insights based on numbers:
 The video focuses on practical steps to maintain privacy and security in a digital world where personal data is constantly at risk.
 Emphasizes the importance of using cash transactions to maintain anonymity in purchasing and operating a smartphone.
 Highlights data limits for prepaid phones as a cost-effective measure, suggesting limits like 4 or 6 gigabytes for savings.
+
+<https://www.bing.com/videos/riverview/relatedvideo?q=How+to+Get+a+Private+Phone%2c+Number%2c+and+Cellular+Data&mid=E11553F42325A0811F49E11553F42325A0811F49&FORM=VIRE>
+
+<https://www.youtube.com/watch?v=XaHWcttD0tM>
