@@ -1,1 +1,1 @@
-# Tarot readers are narcistic Eves(dropper)
+# ^Tarot readers are narcistic Eves(dropper)[s]*[.]+[...]+$
